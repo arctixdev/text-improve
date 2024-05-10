@@ -20,7 +20,7 @@ export default function TextImprover() {
 
     return (
         <div className="flex flex-col gap-2" >
-            <Textarea ref={textInput} id="text" className="h-fill" placeholder="Enter text to improve" disabled={loading} />
+            <Textarea ref={textInput} id="text" className="h-72" placeholder="Enter text to improve" disabled={loading} />
             <Button onClick={improveText} disabled={loading} >Improve</Button>
             { (generation) && <ReactDiffViewer oldValue={textInput.current?.value || ''} newValue={generation} splitView={true} compareMethod={DiffMethod.WORDS} /> }
         </div>
