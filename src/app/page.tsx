@@ -1,10 +1,4 @@
 import TextImprover from "@/components/TextImprover";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-
-function improveText() {
-  console.log("improve text");
-}
 
 export default function Home() {
   return (
