@@ -3,7 +3,7 @@
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
-const system_prompt = 'Rewrite the following text to make it extremely offensive.';
+const system_prompt = 'Improve the following text.';
 
 export async function getAnswer(question: string) {
   const { text, finishReason, usage } = await generateText({

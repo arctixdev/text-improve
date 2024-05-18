@@ -3,7 +3,7 @@
 import { getAnswer } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Copy, CopyCheckIcon } from "lucide-react";
+import { Copy } from "lucide-react";
 import { useRef, useState } from "react";
 import ReactDiffViewer, { DiffMethod } from 'react-diff-viewer-continued';
 
@@ -28,8 +28,8 @@ export default function TextImprover() {
     return (
         <div className="flex flex-col gap-2" >
             <Textarea ref={textInput} id="text" className="h-72" placeholder="Enter text to improve" disabled={loading} />
-            <div>
-                <Button onClick={improveText} disabled={loading} >Improve</Button>
+            <div className="flex flex-row gap-2">
+                <Button onClick={improveText} disabled={loading} className="w-full">Improve</Button>
                 { generation && <Button onClick={copyGeneration}><Copy/></Button> }
             </div>
             { generation && <ReactDiffViewer oldValue={textInput.current?.value || ''} newValue={generation} splitView={true} compareMethod={DiffMethod.WORDS} /> }
